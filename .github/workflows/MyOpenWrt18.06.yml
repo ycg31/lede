@@ -59,9 +59,15 @@ jobs:
         run: |
            cd package
            git clone  https://github.com/Sweet-Fairy/openwrt-package sweet
-           git clone  https://github.com/Leo-Jo/luci-app-vssr
+           git clone  https://github.com/Leo-Jo/luci-app-vssr vssr
            git clone https://github.com/Leo-Jo-My/my my
            git clone   https://github.com/Lienol/openwrt-package
+           rm    -rfv  vssr/root/etc/china_ssr.txt	
+           rm    -rfv  vssr/root/etc/config/black.list	
+           rm    -rfv  vssr/root/etc/config/white.list	
+           rm    -rfv  vssr/root/etc/dnsmasq.oversea	
+           rm    -rfv  vssr/root/etc/dnsmasq.ssr/ad.conf	
+           rm    -rfv  vssr/root/etc/dnsmasq.ssr/gfw_base.conf
            rm    -rfv  my/openwrt-simple-obfs
            rm    -rfv  my/openwrt-v2ray-plugin  
            rm    -rfv  my/openwrt-dnsforwarder  
