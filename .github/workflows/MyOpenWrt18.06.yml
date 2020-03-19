@@ -54,27 +54,12 @@ jobs:
           # ln -s /mnt/openwrt/feeds ./feeds
           # ln -s /mnt/openwrt/staging_dir ./staging_dir
           df -h
-      - name: 自定义插件
-        run: |
-          # rm    -rfv  package/lean/autocore
-          # cd package/diy
-          # tar   xvJf  luci-app-docker.tar.xz
-          # tar   xvJf  luci-app-koolddns.tar.xz
-          # tar   xvJf  luci-app-rclone.tar.xz
-          # tar   xvJf  autocore.tar.xz
-          # tar   xvJf  luci-app-nps.tar.xz
-          # tar   xvJf  luci-app-cpufreq.tar.xz
-          # git clone  https://github.com/Sweet-Fairy/openwrt-package
-          # git clone  https://github.com/Sweet-Fairy/luci-app-ssr-plus-Jo
-          #  git clone -b lean  https://github.com/Sweet-Fairy/luci-app-ssr-plus-Jo package/luci-app-ssr-plus-lean    
-           git clone  https://github.com/Leo-Jo/luci-app-vssr
-          # git clone  https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
-          # git clone  https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman  
-           # ==========ssr-plus-Jo   ssr-plus-lean不要一起编译  +vssr   ==========
-           # ==========以上是示范如何加入tar.xz解包和拉github源码编译==========
+
       - name: 自定义配置文件1
         run: |
            cd package
+           git clone  https://github.com/Sweet-Fairy/openwrt-package
+           git clone  https://github.com/Leo-Jo/luci-app-vssr
            git clone   https://github.com/Lienol/openwrt-package   
            rm    -rfv  openwrt-package/package/v2ray-plugin
            rm    -rfv  openwrt-package/package/v2ray
@@ -82,14 +67,7 @@ jobs:
            rm    -rfv  openwrt-package/package/dns2socks
            rm    -rfv  openwrt-package/package/ipt2socks
            rm    -rfv  openwrt-package/package/shadowsocksr-libev
-           rm    -rfv  ipt2socks
-           
-     # - name: 自定义配置文件2
-     #   run: |
-     #      cd package/my
-     #        rm    -rfv  chinadns-ng
-     #        rm    -rfv  luci-app-passwall
-     #        rm    -rfv  tcping    
+           rm    -rfv  ipt2socks  
              
       - name: Update feeds
         run: |
@@ -212,28 +190,6 @@ jobs:
             CONFIG_PACKAGE_kmod-tcp-bbr-nanqinlang=y
             CONFIG_PACKAGE_luci-app-passwall=y 
             CONFIG_PACKAGE_luci-app-vssr=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_Shadowsocks=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_V2ray=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_Trojan=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_Kcptun=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_ShadowsocksR_Server=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_Shadowsocks_Server=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_ShadowsocksR_Socks=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_Shadowsocks_Socks=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_ipt2socks=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_dnscrypt_proxy=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_dnsforwarder=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_ChinaDNS=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_haproxy=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_privoxy=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_simple-obfs=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_simple-obfs-server=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_udpspeeder=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_udp2raw-tunnel=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_GoQuiet-client=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_GoQuiet-server=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus-Jo_INCLUDE_v2ray-plugin=y
             CONFIG_PACKAGE_luci-app-ssr-plus=y
             CONFIG_PACKAGE_luci-app-advanced-reboot=y
           # CONFIG_PACKAGE_luci-app-amule=y
