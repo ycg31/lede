@@ -60,8 +60,12 @@ jobs:
            cd package
            git clone  https://github.com/Sweet-Fairy/openwrt-package sweet
            git clone  https://github.com/Leo-Jo/luci-app-vssr
-           git clone https://github.com/Leo-Jo-My/my package/my
-           git clone   https://github.com/Lienol/openwrt-package   
+           git clone https://github.com/Leo-Jo-My/my my
+           git clone   https://github.com/Lienol/openwrt-package
+           rm    -rfv  my/openwrt-simple-obfs
+           rm    -rfv  my/openwrt-v2ray-plugin  
+           rm    -rfv  my/openwrt-dnsforwarder  
+           rm    -rfv  my/openwrt-simple-obfs    
            rm    -rfv  openwrt-package/package/v2ray-plugin
            rm    -rfv  openwrt-package/package/v2ray
            rm    -rfv  openwrt-package/package/simple-obfs
