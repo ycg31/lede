@@ -58,8 +58,9 @@ jobs:
       - name: 自定义配置文件1
         run: |
            cd package
-           git clone  https://github.com/Sweet-Fairy/openwrt-package package/sweet
+           git clone  https://github.com/Sweet-Fairy/openwrt-package sweet
            git clone  https://github.com/Leo-Jo/luci-app-vssr
+           git clone https://github.com/Leo-Jo-My/my package/my
            git clone   https://github.com/Lienol/openwrt-package   
            rm    -rfv  openwrt-package/package/v2ray-plugin
            rm    -rfv  openwrt-package/package/v2ray
